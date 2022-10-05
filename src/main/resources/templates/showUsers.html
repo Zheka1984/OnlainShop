@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <ul th:each="list1 : ${list}">
+     <div class="list"><li th:text="${list1.username}"></li></div>
+     <div class="list"><li th:text="${list1.cash}"></li></div>
+     <div class="list"><li th:text="${list1.role}"></li></div>
+        </ul>
+          </div>
+</body>
+</html>

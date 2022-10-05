@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form th:action="@{/save}" th:object="${store}" method="POST">
+ <input type="text" th:field="*{product}" placeholder="введите название товара" >
+ <p th:if="${#fields.hasGlobalErrors() }">key is already exist</p>
+  <input type="number" th:field="*{quantity}" placeholder="введите количество товара на складе" >
+ <p th:if="${#fields.hasErrors('quantity')}">количество товара должно быть больше 0</p>
+  <input type="number" th:field="*{price}" placeholder="введите цену одной еденицы товара">
+ <p th:if="${#fields.hasErrors('price')}">цена товара должна быть больше 0</p>
+ <button type="submit">Submit</button>
+ </form>
+</body>
+</html>

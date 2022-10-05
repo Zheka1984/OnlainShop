@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/allproducts}" method="POST">
+<p>введите максимальную цену товара, или оставьте 0 для поиска всех товаров</p>
+ <input type="number" name="maxprice" placeholder="введите максимальную цену товара" >
+ <button type="submit">Submit</button>
+ </form>
+</body>
+</html>

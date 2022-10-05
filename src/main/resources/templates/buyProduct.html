@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form th:action="@{|/buyProduct${product.id}|}" th:object="${form}" method="POST">
+ <p th:text="${product.product}"></p>
+ <p>введите количество товара на складе</p>
+ <input type="text" th:value="${product.price}" name="price" style="display:none;">
+  <input type="number" th:field="*{quantity}" placeholder="введите количество товара на складе" >
+  <p th:text="${product.price}"></p>
+<span class="text-danger" th:errors="*{global}"> </span>      
+<br>
+ <button type="submit">Submit</button>
+ <a href="http://localhost:8080/signOut"><button>разлогиниться</button></a>
+ </form>
+</body>
+</html>

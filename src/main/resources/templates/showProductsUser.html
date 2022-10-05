@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<ul th:each="product : ${result}">
+    <p>вы можете купить любой продукт из списка</p>
+    <a th:href="@{|/buyProduct${product.id}|}"><li th:text="|${product.product}   ${product.quantity} штук, ${product.price} р/штука|"></li></a>
+</ul>
+</body>
+</html>

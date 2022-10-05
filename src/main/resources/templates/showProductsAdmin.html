@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<ul th:each="product : ${result}">
+    <p>вы можете изменить или удалить продукт из списка или добавить новый</p>
+    <a th:href="@{|/changeProduct${product.id}|}"><li th:text="|${product.product}   ${product.quantity} штук, ${product.price} р/штука|"></li></a>
+</ul>
+<a href="http://localhost:8080/save"><button>добавить новый товар</button></a>
+<a href="http://localhost:8080/showRoles"><button>посмотреть всех пользователей</button></a>
+<div th:if="${message}" th:text="${message}" />
+</div>
+</body>
+</html>

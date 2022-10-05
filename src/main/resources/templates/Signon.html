@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/signOn}" th:object="${customer}" method="POST">
+ <input type="text" th:field="*{username}" placeholder="введите имя пользователя" >
+ <p th:if="${#fields.hasErrors('username')}">введите корректное имя пользователя не меньше 2-ух символов</p>
+  <input type="text" th:field="*{password}" placeholder="введите любой пароль" >
+  <input type="number" th:field="*{cash}" placeholder="введите количество денег у пользователя">
+ <p th:if="${#fields.hasErrors('cash')}">денег должно быть больше 0</p>
+ <p><select size="2" th:name="role">
+    <option disabled>Выберите роль пользователя, админ или юзер</option>
+    <option selected value="USER">USER</option>
+    <option value="ADMIN">ADMIN</option>
+   </select></p>
+ <button type="submit">Submit</button>
+ </form>
+</body>
+</html>
